@@ -63,6 +63,7 @@ public class Respawn : FortressCraftMod
             float z = float.Parse(coords[2]);
             WorldScript.Teleport(x + " " + y + " " + z);
         }
+
         playerMoved = true;
     }
 
@@ -86,9 +87,9 @@ public class Respawn : FortressCraftMod
         if (player != null)
         {
             ulong userID = player.mUserID;
-            float x = player.mnWorldX - WorldScript.instance.mWorldData.mSpawnX;
-            float y = player.mnWorldY - WorldScript.instance.mWorldData.mSpawnY;
-            float z = player.mnWorldZ - WorldScript.instance.mWorldData.mSpawnZ;
+            float x = player.mnWorldX - 4611686017890516992L;
+            float y = player.mnWorldY - 4611686017890516992L;
+            float z = player.mnWorldZ - 4611686017890516992L;
             string respawnFilePath = Path.Combine(assemblyFolder, userID + ":" + worldID + ".txt");
             File.WriteAllText(respawnFilePath, x + "," + y + "," + z);
         }
